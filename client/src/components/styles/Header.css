@@ -1,0 +1,198 @@
+/* -------------- header css starts here  -------------- */
+.page-top-header {
+    width: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding: 17px 32px 16px 12px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background-color: var(--header--background);
+  }
+  
+  .bi-header--left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 16px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  
+  .bi-header-logo {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+    border-radius: 8px;
+  }
+  
+  .bi-header-logo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .bi-search-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 400px;
+    min-width: 400px;
+    background: rgba(250, 251, 252, 0.1);
+    padding: 15px 32px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 16px;
+  
+    border-radius: 8px;
+  }
+  
+  .search-form {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+    gap: 12px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .search-form input[type="text"] {
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    font-family: Poppins;
+    font-size: var(--text-reg);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26.24px;
+    color: var(--gray--2);
+  }
+  
+  .search-form input[type="text"]::-webkit-input-placeholder {
+    color: var(--gray--2);
+  }
+  
+  .search-form input[type="text"]::-moz-placeholder {
+    color: var(--gray--2);
+  }
+  
+  .search-form input[type="text"]:-ms-input-placeholder {
+    color: var(--gray--2);
+  }
+  
+  .search-form input[type="text"]::-ms-input-placeholder {
+    color: var(--gray--2);
+  }
+  
+  .search-form input[type="text"]::placeholder {
+    color: var(--gray--2);
+  }
+  
+  .bi-header--right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .bi-header-icon-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 64px;
+    height: 56px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 8px;
+    background: rgba(250, 251, 252, 0.1);
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border: none;
+    border: 1px solid transparent;
+    -webkit-transition: var(--base-transition);
+    -o-transition: var(--base-transition);
+    transition: var(--base-transition);
+  }
+  
+  .bi-header-icon-btn:hover {
+    border: 1px solid var(--primary--color);
+    background-color: transparent;
+  }
+  
+  .bi-header-icon-btn:hover svg path {
+    fill: var(--primary--color);
+  }
+  
+  .bi-header-icon-btn.active-link svg path {
+    fill: var(--primary--color);
+  }
+  
+  .bi-user-img {
+    width: 56px;
+    min-width: 56px;
+    height: 56px;
+    height: 56px;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+  }
+  
+  .bi-user-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .bi-user-img span {
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    background-color: var(--header--background);
+    border-radius: 50%;
+    padding: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  /*  -------------- header css starts here  -------------- */
