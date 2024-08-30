@@ -1,10 +1,12 @@
-import './styles/Header.css'
+
+import logo from '../assets/logo.png'
+import user from '../assets/hitman.jpg'
 const Header = () => {
   return (
     <header className="page-top-header">
     <div className="bi-header--left">
       <a href="index.html" className="bi-header-logo">
-        <img src="assets/images/logo.png" alt="" srcSet="" />
+        <img src={logo} alt="" srcSet="" />
       </a>
       <div className="bi-search-wrapper">
         <form action="" className="search-form">
@@ -49,7 +51,7 @@ const Header = () => {
         </svg>
       </button>
       <a href="profile.html" className="bi-user-img">
-        <img src="assets/images/bi-user-img.png" alt="" srcSet="" />
+        <img src={user} alt="" srcSet="" />
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
             <rect width="14" height="13" rx="6.5" fill="#06151D" />

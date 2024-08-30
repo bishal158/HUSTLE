@@ -1,4 +1,3 @@
-import "./styles/Auth.css";
 
 const SignIn = () => {
   return (

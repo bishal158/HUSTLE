@@ -1,6 +1,6 @@
 // package
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+
 // route components
 import {
   createBrowserRouter,
@@ -10,6 +10,8 @@ import CommonLayout from './layouts/CommonLayout';
 import Feeds from './pages/Feeds';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
+import Forums from './pages/Forums';
+import ProfileEdit from './pages/ProfileEdit';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -21,11 +23,14 @@ const router = createBrowserRouter([
     
       },
       {
-        path: '/groups',
-        element:  <Feeds />,
+        path: '/forums',
+        element:  <Forums />,
 
       },
- 
+      {
+        path: '/settings',
+        element: <ProfileEdit />  // add this if you want to use ProfilePage component
+      }
     
       
     ],

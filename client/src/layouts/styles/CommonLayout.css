@@ -15,70 +15,164 @@
   
   /* main display wrapper ends */
 
-
-  
 /* center wrapper starts */
 
 .bi-page-center-wrapper {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    height: 100%;
-    padding: 24px 24px 0 24px;
-    background-color: var(--page-background);
-    position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 100%;
+  padding: 24px 24px 0 24px;
+  background-color: var(--page-background);
+  position: relative;
+}
+
+.bi-page-center-wrapper.forGroup {
+  overflow-y: scroll;
+}
+
+.bi-page-center-wrapper.forum-page {
+  padding: 0;
+}
+
+.bi-page-center-wrapper.profile-edit-page {
+  padding: 24px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.bi-page-center-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 900;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+
+}
+
+.bi-page-center-wrapper.sidebar-active::after {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.bi-page-center-wrapper::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+/* center wrapper ends */
+
+/* desktop devices */
+@media only screen and (min-width: 1366px) and (max-width: 1919px){
+  .bi-page-center-wrapper {
+    padding: 12px;
+
   }
-  
-  .bi-page-center-wrapper.forGroup {
-    overflow-y: scroll;
-  }
-  
-  .bi-page-center-wrapper.forum-page {
-    padding: 0;
-  }
-  
+
+  /* profile edit page */
   .bi-page-center-wrapper.profile-edit-page {
-    padding: 24px 0 0 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+    padding: 24px;
   }
-  
-  .bi-page-center-wrapper::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    max-height: 100%;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    z-index: 900;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
-  
+}
+
+/* custom media 1 */
+@media only screen and (min-width: 1600px) and (max-width: 1699px){
+
+}
+
+/* custom media 2 */
+
+@media only screen and (min-width: 1366px) and (max-width: 1599px) {
+
+}
+
+/* laptop devices */
+@media only screen and (min-width: 1200px) and (max-width: 1365px){
+  .bi-page-center-wrapper.profile-edit-page {
+    padding: 24px;
   }
-  
-  .bi-page-center-wrapper.sidebar-active::after {
-    visibility: visible;
-    opacity: 1;
-  
+  .bi-page-center-wrapper {
+    padding: 12px;
+
   }
-  
-  .bi-page-center-wrapper::-webkit-scrollbar {
-    width: 0;
-    background-color: transparent;
+}
+
+/* large tablet devices */
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+  .bi-page-wrapper {
+    height: calc(100vh - 90px);
   }
-  
-  /* center wrapper ends */
+  .bi-page-center-wrapper {
+    padding: 12px 20px;
+  }
+
+}
+
+/* medium tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .bi-page-wrapper {
+    height: calc(100vh - 76px);
+  }
+  .bi-page-center-wrapper {
+    padding: 12px 20px;
+  }
+
+}
+
+  /* small tablet devices */
+@media only screen and (min-width: 576px) and (max-width: 767px){
+  .bi-page-wrapper {
+    height: calc(100vh - 76px);
+  }
+  .bi-page-center-wrapper {
+    padding: 12px;
+  }
+}
+
+/* large mobile devices */
+@media only screen and (min-width: 480px) and (max-width: 575px){
+  .bi-page-wrapper {
+    height: calc(100vh - 51px);
+  }
+  .bi-page-center-wrapper {
+    padding: 12px;
+  }
+}
+
+/* mobile devices */
+@media only screen and (min-width: 375px) and (max-width: 479px) {
+  .bi-page-wrapper {
+    height: calc(100vh - 51px);
+  }
+  .bi-page-center-wrapper {
+    padding: 12px;
+  }
+}
+
+  @media only screen and (max-width: 374px){
+    .bi-page-wrapper {
+      height: calc(100vh - 51px);
+    }
+    .bi-page-center-wrapper {
+      padding: 12px;
+    }
+  }
