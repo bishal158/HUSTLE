@@ -18,12 +18,10 @@ const connectDb = async () => {
       console.error("Error connecting to MongoDB:", error);
     }
   };
-
-
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors());
-  connectDb().then(()=>{
+connectDb().then(()=>{
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
@@ -32,5 +30,3 @@ app.use(cors());
 
 
 // routes
-const productRoute = require("./routes/productRoutes");
-app.use("/api/product", productRoute);

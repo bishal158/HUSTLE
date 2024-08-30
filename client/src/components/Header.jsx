@@ -1,13 +1,14 @@
 
 import logo from '../assets/logo.png'
 import user from '../assets/hitman.jpg'
+import {Link} from "react-router-dom";
 const Header = () => {
   return (
     <header className="page-top-header">
     <div className="bi-header--left">
-      <a href="index.html" className="bi-header-logo">
+      <Link to={'/'}  className="bi-header-logo">
         <img src={logo} alt="" srcSet="" />
-      </a>
+      </Link>
       <div className="bi-search-wrapper">
         <form action="" className="search-form">
           <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">

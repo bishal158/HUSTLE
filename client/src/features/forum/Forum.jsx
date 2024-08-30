@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 
 const Forum = () => {
   return (
@@ -206,7 +207,7 @@ const Forum = () => {
                     <span>1.2k</span>
                   </button>
 
-                  <a href="single-forum.html" className="forum-common-btn">
+                  <Link  className="forum-common-btn" to={'/forum/1'}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -222,7 +223,7 @@ const Forum = () => {
                       />
                     </svg>
                     <span>61</span>
-                  </a>
+                  </Link>
 
                   <button className="forum-common-btn">
                     <svg

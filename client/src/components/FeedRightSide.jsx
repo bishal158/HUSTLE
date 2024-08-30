@@ -1,3 +1,5 @@
+import {contacts, groups} from "../data/temporaryData.js";
+import {Link} from "react-router-dom";
 
 const FeedRightSide = () => {
   return (
@@ -11,39 +13,25 @@ const FeedRightSide = () => {
             </form>
           </div>
           <ul className="bi-groups-list-container">
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/Group-2.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Microsoft</span>
-                  <span className="bi-group-member">812k members</span>
-                </div>
-              </a>
-            </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/Group-1.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Netflix</span>
-                  <span className="bi-group-member">812k members</span>
-                </div>
-              </a>
-            </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/Group-3.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Microsoft</span>
-                  <span className="bi-group-member">812k members</span>
-                </div>
-              </a>
-            </li>
+
+            {
+              groups.map((group, index) =>{
+                return(
+                    <Link to={'/'} key={index} className="bi-group-list-item">
+                      <div className="bi-group-list-item-link">
+                        <div className="bi-group-image">
+                          <img src={group.image} alt=""/>
+                        </div>
+                        <div className="bi-group-list-item-text">
+                          <span className="bi-group-name">{group.name}</span>
+                          <span className="bi-group-member">{group.members} members</span>
+                        </div>
+                      </div>
+                    </Link>
+                )
+              })
+            }
+
           </ul>
         </div>
 
@@ -52,7 +40,7 @@ const FeedRightSide = () => {
             <span> Contacts </span>
             <form action="" className="bi-content-box-search-section">
               <div className="left-side">
-                <input type="text" />
+                <input type="text"/>
                 <span className="bi-post-react-btn">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -84,46 +72,23 @@ const FeedRightSide = () => {
             </form>
           </div>
           <ul className="bi-groups-list-container">
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/contact-user-1.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Jane Cooper</span>
-                </div>
-              </a>
-            </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/contact-user-2.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Jerome Bell</span>
-                </div>
-              </a>
-            </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/contact-user-3.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Floyd Miles</span>
-                </div>
-              </a>
-            </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/contact-user-5.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Kathryn Murphy</span>
-                </div>
-              </a>
-            </li>
+
+            {
+              contacts.map((contact, index)=>{
+                return (
+                    <Link to={'/'} className="bi-group-list-item" key={index}>
+                      <div  className="bi-group-list-item-link">
+                        <div className="bi-group-image">
+                          <img src={contact.image} alt=""/>
+                        </div>
+                        <div className="bi-group-list-item-text">
+                          <span className="bi-group-name">{contact.name}</span>
+                        </div>
+                      </div>
+                    </Link>
+                )
+              })
+            }
           </ul>
         </div>
 
@@ -132,7 +97,7 @@ const FeedRightSide = () => {
             <span> Messages </span>
             <form action="" className="bi-content-box-search-section">
               <div className="left-side">
-                <input type="text" />
+                <input type="text"/>
                 <span className="bi-post-react-btn">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -165,74 +130,47 @@ const FeedRightSide = () => {
           </div>
           <ul className="bi-groups-list-container">
             <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/bi-user-img-2.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Jenny Willson</span>
-                  <span className="bi-group-member">
-                    <span className="bi-msg-text">
-                      Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Libero
-                      necessitatibus iusto, qui minus debitis deserunt,
-                      accusamus omnis corporis quos iure ab itaque perspiciatis
-                      autem ducimus incidunt, officiis quam quasi explicabo.
-                    </span>
-                    <span>14:25</span>
-                  </span>
-                </div>
-              </a>
+
             </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/contact-user-6.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Eleanor Pena</span>
-                  <span className="bi-group-member">
+            {
+              contacts.map((contact, index) =>{
+                return(
+                    <Link to={'/'} key={index} className="bi-group-list-item">
+                      <div className="bi-group-list-item-link">
+                        <div className="bi-group-image">
+                          <img src={contact.image} alt=""/>
+                        </div>
+                        <div className="bi-group-list-item-text">
+                          <span className="bi-group-name">{contact.name}</span>
+                          <span className="bi-group-member">
                     <span className="bi-msg-text">
-                      Lorem ipsum dolor sit amet, consectetur...
+                      {contact.message}
                     </span>
-                    <span>14:25</span>
+                    <span>{contact.time}</span>
                   </span>
-                </div>
-              </a>
-            </li>
-            <li className="bi-group-list-item">
-              <a href="#" className="bi-group-list-item-link">
-                <div className="bi-group-image">
-                  <img src="./assets/images/contact-user-4.png" alt="" />
-                </div>
-                <div className="bi-group-list-item-text">
-                  <span className="bi-group-name">Cameron Williamson</span>
-                  <span className="bi-group-member">
-                    <span className="bi-msg-text">
-                      Lorem ipsum dolor sit amet, consectetur...
-                    </span>
-                    <span>14:25</span>
-                  </span>
-                </div>
-              </a>
-            </li>
+                        </div>
+                      </div>
+                    </Link>
+                )
+              })
+            }
           </ul>
         </div>
       </section>
       <div className="common-side-opener bi-right-side-opener">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
         >
           <path
-            d="M15.75 19.5L8.25 12L15.75 4.5"
-            stroke="black"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+              d="M15.75 19.5L8.25 12L15.75 4.5"
+              stroke="black"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
           />
         </svg>
       </div>

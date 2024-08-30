@@ -12,6 +12,7 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Forums from './pages/Forums';
 import ProfileEdit from './pages/ProfileEdit';
+import {SingleForum} from "./pages/SingleForum.jsx";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: '/forums',
         element:  <Forums />,
+
+      },
+      {
+        path: '/forum/:id',
+        element:  <SingleForum />,
 
       },
       {
