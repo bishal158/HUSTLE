@@ -1,6 +1,9 @@
 // package
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 
+import 'yet-another-react-lightbox/styles.css'
+import "yet-another-react-lightbox/plugins/counter.css";
 // route components
 import {
   createBrowserRouter,
@@ -13,6 +16,10 @@ import SignIn from './pages/SignIn';
 import Forums from './pages/Forums';
 import ProfileEdit from './pages/ProfileEdit';
 import {SingleForum} from "./pages/SingleForum.jsx";
+import Groups from './pages/Groups.jsx';
+import GroupView from './pages/GroupView.jsx'
+import Peoples from './pages/Peoples.jsx';
+import Profile from './pages/Profile.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,17 +36,36 @@ const router = createBrowserRouter([
 
       },
       {
+        path: '/peoples',
+        element:  <Peoples />,
+
+      },
+      {
+        path: '/groups',
+        element:  <Groups />,
+
+      },
+      {
         path: '/forum/:id',
         element:  <SingleForum />,
 
       },
       {
+        path: '/group/:id',
+        element:  <GroupView />,
+
+      },
+      {
         path: '/settings',
-        element: <ProfileEdit />  // add this if you want to use ProfilePage component
+        element: <ProfileEdit />  
       }
     
       
     ],
+  },
+  {
+    path: 'profile',
+    element: <Profile/>    
   },
   {
     path: '/signup',

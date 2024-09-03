@@ -1,7 +1,6 @@
-
 import FeedRightSide from "../components/FeedRightSide";
 import LeftSide from "../components/LeftSide";
-import Posts from "../features/post/Posts"
+import Posts from "../features/post/Posts";
 
 const Feeds = () => {
   return (
@@ -10,7 +9,9 @@ const Feeds = () => {
         <LeftSide />
       </div>
       <div className="bi-page-center-wrapper">
-        <Posts/>
+        <div className="bi-home-page-content-wrapper">
+          <Posts />
+        </div>
       </div>
 
       <div className="bi-right--sidebar--wrapper">

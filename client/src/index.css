@@ -267,7 +267,7 @@ main {
   fill: var(--primary--color);
 }
 
-.bi-header-icon-btn.active-link svg path {
+.bi-header-icon-btn.active svg path {
   fill: var(--primary--color);
 }
 
@@ -1760,7 +1760,10 @@ a.active {
   font-size: var(--text-sm);
   font-style: normal;
   font-weight: 400;
-  line-height: 22.96px;
+  line-height: 22px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
   /* 22.96px */
 }
 
@@ -3032,16 +3035,6 @@ a.active {
   position: relative;
 }
 
-.invitation--item--content--mutal::after {
-  position: absolute;
-  content: '';
-  left: 135px;
-  top: 8px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: var(--gray--1);
-}
 
 .invitation--item--btns {
   display: -webkit-box;
@@ -3067,6 +3060,7 @@ a.active {
   -webkit-transition: all linear 0.3s;
   -o-transition: all linear 0.3s;
   transition: all linear 0.3s;
+  background: transparent;
 }
 
 .nr--accept--btn:hover {
@@ -3100,7 +3094,7 @@ a.active {
 
 .nr--people--you--know--card--main {
   margin-top: 20px;
-  padding: 0 24px;
+  padding: 10px 24px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 35px 1fr 35px 1fr;
@@ -3127,7 +3121,7 @@ a.active {
 }
 
 .nr--people--you--know--card:hover {
-  scale: 105%;
+  scale: 104%;
 }
 
 .nr--people--you--know--cover--photo {
@@ -3413,9 +3407,7 @@ a.active {
   margin-left: 20px;
 }
 
-.invitation--item--content--mutal.groupCreate::after {
-  left: 112px;
-}
+
 
 .nr--people--you--know--cover--photo--img.nr--create--group {
   height: 269px;
