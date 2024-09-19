@@ -1640,7 +1640,11 @@ a.active {
 #post-dot-btn {
   cursor: pointer;
 }
-
+.more_options_btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
 .bi-post-delete-actions {
   width: 150px;
   height: auto;
