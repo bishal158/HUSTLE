@@ -4,7 +4,8 @@ import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {fetchPosts} from "./postSlice.js"
+import { fetchPosts } from "./postSlice.js"
+
 import {
 
   BookMarkIcon,
@@ -16,10 +17,9 @@ import {
   ThreeDotIcon,
   TrashIcon,
 } from "../../data/Icon.jsx";
+import { useGetAllPostsQuery } from "./postQuery.js";
 
 const Posts = () => {
-  const dispatch = useDispatch();
-  const { posts, status, error } = useSelector((state) => state.posts);
   const [openLightboxIndex, setOpenLightboxIndex] = useState(null);
   const [openCommentSections, setOpenCommentSections] = useState({});
   const [openMore, setOpenMore] = useState({});
@@ -44,28 +44,37 @@ const Posts = () => {
     setOpenLightboxIndex(null);
   };
 
-  // Fetch posts when the component mounts
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await dispatch(fetchPosts());
-      } catch (error) {
-        console.error("Failed to fetch posts: ", error);
-      }
-    };
+  // Fetch posts when the component mounts with asyncThunk
 
-    fetchData();
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // const { posts, status, error } = useSelector((state) => state.posts);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       await dispatch(fetchPosts());
+  //     } catch (error) {
+  //       console.error("Failed to fetch posts: ", error);
+  //     }
+  //   };
 
+  //   fetchData();
+  // }, [dispatch]);
   // Handle loading and error states
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
+  // if (status === "loading") {
+  //   return <div>Loading...</div>;
+  // }
+  // if (status === "failed") {
+  //   return <div>Error: {error}</div>;
+  // }
 
-  if (status === "failed") {
-    return <div>Error: {error}</div>;
-  }
 
+
+  // Fetch posts using RTK Query
+
+  const {data:posts, error, isFetching, isLoading } = useGetAllPostsQuery();
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  console.log(isFetching)
   return (
     <>
       <WhatsNew />

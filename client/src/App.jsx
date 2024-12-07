@@ -22,61 +22,51 @@ import Peoples from './pages/Peoples.jsx';
 import Profile from './pages/Profile.jsx'
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/hustle",
     element: <CommonLayout />,
     children: [
       {
-        path: '/',
-        element:  <Feeds />,
-    
+        path: "/hustle/feeds",
+        element: <Feeds />,
       },
       {
-        path: '/forums',
-        element:  <Forums />,
-
+        path: "/hustle/forums",
+        element: <Forums />,
       },
       {
-        path: '/peoples',
-        element:  <Peoples />,
-
+        path: "/hustle/peoples",
+        element: <Peoples />,
       },
       {
-        path: '/groups',
-        element:  <Groups />,
-
+        path: "/hustle/groups",
+        element: <Groups />,
       },
       {
-        path: '/forum/:id',
-        element:  <SingleForum />,
-
+        path: "/hustle/forum/:id",
+        element: <SingleForum />,
       },
       {
-        path: '/group/:id',
-        element:  <GroupView />,
-
+        path: "/hustle/group/:id",
+        element: <GroupView />,
       },
       {
-        path: '/settings',
-        element: <ProfileEdit />  
-      }
-    
-      
+        path: "/hustle/settings",
+        element: <ProfileEdit />,
+      },
     ],
   },
   {
-    path: 'profile',
-    element: <Profile/>    
+    path: "/profile",
+    element: <Profile />,
   },
-  {
-    path: '/signup',
-    element: <SignUp/>    
-  },
-  {
-    path: '/signin',
-    element: <SignIn/>    
-  },
-
-
 ]);
 
 

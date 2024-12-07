@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="36afb9fe-1c98-4e13-8086-f7c8fae6d16e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +61,11 @@
       </map>
     </option>
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\MY CLASS\ALL OF MY PROJECTS\Office\React\hustle\client\src\redux" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -76,6 +84,10 @@
       <workItem from="1725025995969" duration="5898000" />
       <workItem from="1725289734286" duration="3518000" />
       <workItem from="1725325463964" duration="1847000" />
+      <workItem from="1727854634099" duration="227000" />
+      <workItem from="1727854878409" duration="17000" />
+      <workItem from="1727875132124" duration="13000" />
+      <workItem from="1728187044922" duration="176000" />
     </task>
     <servers />
   </component>

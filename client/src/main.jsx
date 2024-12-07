@@ -4,7 +4,13 @@ import App from "./App.jsx";
 import "./index.css";
 import "./responsive.css";
 import { Provider } from "react-redux";
-import store from "./store.js";
+import store from "./redux/store.js";
+// fontawesome icons
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from "@fortawesome/free-regular-svg-icons";
+library.add(fab, fas, far);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

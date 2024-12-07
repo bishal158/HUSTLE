@@ -86,16 +86,13 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y: hidden;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   background: var(--page-background);
-  min-height: 100vh;
-  height: 100vh;
 }
 
 main {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -2419,7 +2416,7 @@ a.active {
   color: var(--white);
   font-size: 40px;
   font-weight: 600;
-  line-height: 52px;
+  line-height: 30px;
   letter-spacing: -0.8px;
 }
 
@@ -2428,7 +2425,7 @@ a.active {
   font-size: var(--text-reg-lg);
   font-weight: 400;
   line-height: 36px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .input--lebel--text {
@@ -2481,8 +2478,9 @@ a.active {
 
 /* ============================================ sign in signUp start hare ====================================== */
 .nr--signIn--wrapper {
-  padding: 24px 84px;
-  height: 100dvh;
+  padding: 12px 84px;
+  max-height: 100vh;
+  overflow-y: hidden;
   width: 100%;
   background-color: var(--site--Background);
 }
@@ -2494,6 +2492,7 @@ a.active {
   -webkit-column-gap: 146px;
   -moz-column-gap: 146px;
   column-gap: 146px;
+  align-items: center;
 }
 
 .nr--signIn--left {
@@ -2522,7 +2521,9 @@ a.active {
   overflow-y: auto;
   height: 95dvh;
 }
-
+.nr--signIn--right::-webkit-scrollbar{
+  display: none;
+}
 
 
 .nr--logo--signIn {
@@ -2532,7 +2533,7 @@ a.active {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: end;
-  margin-bottom: 78px;
+  margin-bottom: 10px;
 }
 
 
@@ -2541,7 +2542,7 @@ a.active {
 }
 
 .nr--logIn--with--wrapper {
-  margin-top: 32px;
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2601,7 +2602,7 @@ a.active {
 
 
 .nr--or {
-  margin-top: 57px;
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2634,9 +2635,13 @@ a.active {
 
 
 
-
+.nr--email--input--main{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .nr--email--and--password--wrapper {
-  margin-top: 48px;
+  margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2644,7 +2649,7 @@ a.active {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 25px;
+  gap: 5px;
 }
 
 .nr--email--input--main label {
@@ -2703,7 +2708,7 @@ a.active {
 }
 
 .nr--sign--in--checkbox {
-  margin-top: 32px;
+  margin-top: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2756,11 +2761,11 @@ a.active {
   text-transform: capitalize;
   padding: 15px 0;
   border: none;
-  margin-top: 55px;
+  margin-top: 20px;
 }
 
 .nr--dont--account {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .nr--dont--account--text {
@@ -2781,7 +2786,7 @@ a.active {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 8px;
 }
 
 .nr--right--reserve {
@@ -5943,4 +5948,38 @@ a.active {
   font-weight: 500px;
   color: var(--black);
   background-color: var(--primary--color);
+}
+
+
+.error__msg{
+ 
+  color: rgb(202, 44, 44);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+
+.toast-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-icon {
+  color: #28a745; /* Green color for success */
+  font-size: 22px;
+  animation: check-animation 1s ease-out;
+}
+
+@keyframes check-animation {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

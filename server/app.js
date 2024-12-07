@@ -20,17 +20,19 @@ const connectDb = async () => {
     console.error("Error connecting to MongoDB:", error);
   }
 };
-
-app.use(cookieParser());
-app.use(express.json());
-app.use(cors());
-
 connectDb().then(() => {
   console.log("Connected to MongoDB");
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 });
+// app use
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors());
+// for user 
+const userRoutes = require("./routes/userRoutes");
+app.use("/api", userRoutes);
 
 // Generate fake posts data
 app.get("/api/posts", (req, res) => {
