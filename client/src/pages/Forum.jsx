@@ -3,10 +3,10 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 
-import post_img_1 from "../../assets/hitman.jpg";
-import post_img_2 from "../../assets/post-image-2.png";
-import post_img_3 from "../../assets/post-image-3.png";
-import post_img_4 from "../../assets/post-image-4.png";
+import post_img_1 from "../assets/hitman.jpg";
+import post_img_2 from "../assets/post-image-2.png";
+import post_img_3 from "../assets/post-image-3.png";
+import post_img_4 from "../assets/post-image-4.png";
 const Forum = () => {
   const images = [post_img_1, post_img_2, post_img_3, post_img_4];
   const [isOpen, setIsOpen] = useState(false);

@@ -1,5 +1,5 @@
 import LeftSide from "../components/LeftSide";
-import Forum from "../features/forum/Forum";
+import Forum from "./Forum";
 
 const Forums = () => {
   return (

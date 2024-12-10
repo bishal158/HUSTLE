@@ -1,7 +1,7 @@
 import LeftSide from "../components/LeftSide";
 import GroupViewRightSide from "../components/GroupViewRightSide";
 import groupViewBack from '../assets/groupViewBack.png'
-import Posts from "../features/post/Posts";
+import Posts from "./Posts";
 const GroupView = () => {
   return (
     <>

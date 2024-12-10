@@ -1,7 +1,7 @@
 import logo from "../assets/logo.png";
 import user from "../assets/hitman.jpg";
 import { Link, NavLink } from "react-router-dom";
-import Notification from "../features/notification/Notification";
+import Notification from "./Notification";
 import { useState } from "react";
 const Header = () => {
   const [showNotifications , setShowNotifications] = useState(false)

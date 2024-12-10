@@ -5,7 +5,10 @@ import logo from "../assets/logo.png";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { validatePassword } from "../utils/validatePassword";
+import { useDispatch, useSelector } from "react-redux";
+import { signUp } from "../redux/features/api/auth/authApi";
 const SignUp = () => {
   const {
     register,
@@ -13,17 +16,21 @@ const SignUp = () => {
     watch,
     formState: { errors },
   } = useForm();
-  // onsubmit
+
+  const dispatch = useDispatch();
+  const { loading, error, user, success } = useSelector((state) => state.auth);
+
   const onSubmit = (data) => {
-    console.log("Form Submitted", data);
-    toast(
-      <div className="toast-success">
-        <FontAwesomeIcon icon="fa-solid fa-circle-check success-icon" />
-        <span>Successfully Registered</span>
-      </div>,
-      {
+    const userData = {
+      fullName: data.fullName,
+      email: data.email,
+      password: data.password,
+    };
+    dispatch(signUp(userData));
+    if (error) {
+      toast.error(error, {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -31,32 +38,23 @@ const SignUp = () => {
         progress: undefined,
         theme: "dark",
         transition: Zoom,
-      }
-    );
+      });
+    }
+    if (success) {
+      toast.success("SignUp Successfully", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Zoom,
+      });
+    }
   };
 
-  // Custom Validation for Password
-  const validatePassword = (password) => {
-    if (password.length < 8) {
-      return "Password must be at least 8 characters long";
-    }
-    if (password.length > 16) {
-      return "Password cannot be longer than 16 characters";
-    }
-    if (!/[A-Z]/.test(password)) {
-      return "Password must contain at least one uppercase letter";
-    }
-    if (!/[a-z]/.test(password)) {
-      return "Password must contain at least one lowercase letter";
-    }
-    if (!/\d/.test(password)) {
-      return "Password must contain at least one number";
-    }
-    if (!/[@$!%*?&]/.test(password)) {
-      return "Password must contain at least one special character";
-    }
-    return true; 
-  };
   return (
     <>
       <section className="nr--signIn--wrapper">
@@ -115,13 +113,13 @@ const SignUp = () => {
                 <div className="nr--email--and--password--wrapper">
                   {/* full name */}
                   <div className="nr--email--input--main">
-                    <label htmlFor="name">
+                    <label htmlFor="fullName">
                       <span className="input--lebel--text">Full Name</span>
                     </label>
                     <div className="nr--email--input">
                       <input
                         type="text"
-                        id="name"
+                        id="fullName"
                         name="fullName"
                         {...register("fullName", {
                           required: "This field is required",
@@ -232,7 +230,7 @@ const SignUp = () => {
                 </div>
                 <div className="signIn--btn">
                   <button type="submit" className="loginSubmit--btn">
-                    Sign Up
+                    {loading ? "Loading" : "Sign Up"}
                   </button>
                 </div>
               </form>

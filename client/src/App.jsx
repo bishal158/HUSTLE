@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <CommonLayout />,
     children: [
       {
-        path: "/hustle/feeds",
+        path: "/hustle",
         element: <Feeds />,
       },
       {

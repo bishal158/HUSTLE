@@ -1,6 +1,6 @@
 import FeedRightSide from "../components/FeedRightSide";
 import LeftSide from "../components/LeftSide";
-import Posts from "../features/post/Posts";
+import Posts from "./Posts";
 
 const Feeds = () => {
   return (

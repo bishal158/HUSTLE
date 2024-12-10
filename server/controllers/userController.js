@@ -9,7 +9,7 @@ const User = require("../models/userSchema");
 
 //  controller functions starts here
 const signup = async (req, res, next) => {
-  const { full_name, phone, email, password } = req.body;
+  const { fullName, email, password } = req.body;
   let existingUser;
   try {
     existingUser = await User.findOne({ email: email });
@@ -23,8 +23,7 @@ const signup = async (req, res, next) => {
   }
   const hashedPassword = bcrypt.hashSync(password);
   const user = new User({
-    full_name,
-    phone,
+    fullName,
     email,
     password: hashedPassword,
   });

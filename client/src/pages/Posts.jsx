@@ -1,13 +1,12 @@
-import { WhatsNew } from "../../components/WhatsNew";
+import { WhatsNew } from "../components/WhatsNew.jsx";
 import { useEffect, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "./postSlice.js"
+import { fetchPosts } from "../redux/features/slices/post/postSlice.js";
 
 import {
-
   BookMarkIcon,
   CommentIcon,
   EyeSlashIcon,
@@ -16,8 +15,13 @@ import {
   TagIcon,
   ThreeDotIcon,
   TrashIcon,
-} from "../../data/Icon.jsx";
-import { useGetAllPostsQuery } from "./postQuery.js";
+} from "../data/Icon.jsx";
+import {
+  useGetAllPostsQuery,
+  useGetFilteredPostsQuery,
+  useUpdatePostMutation,
+  useDeletePostMutation,
+} from "../redux/features/slices/post/postQuery.js";
 
 const Posts = () => {
   const [openLightboxIndex, setOpenLightboxIndex] = useState(null);
@@ -67,14 +71,43 @@ const Posts = () => {
   //   return <div>Error: {error}</div>;
   // }
 
-
-
   // Fetch posts using RTK Query
+  const {
+    data: posts,
+    error: postsError,
+    isFetching: isPostsFetching,
+    isLoading: isPostsLoading,
+  } = useGetAllPostsQuery();
 
-  const {data:posts, error, isFetching, isLoading } = useGetAllPostsQuery();
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-  console.log(isFetching)
+  // Fetch filtered posts based on a specific filter (e.g., category or keyword)
+  const {
+    data: filteredPosts,
+    isLoading: isFilteredPostsLoading,
+    error: filteredPostsError,
+  } = useGetFilteredPostsQuery({
+    category: "tech",
+    date: "2024-12-10",
+    user: "john_doe",
+  });
+
+  // Update a post
+  const [updatePost, { isLoading: isUpdating, isError: isUpdateError }] =
+    useUpdatePostMutation();
+  const handleUpdate = async (id, updatedPost) => {
+    await updatePost({ id, updatedPost });
+  };
+
+  // Delete a post
+  const [deletePost, { isLoading: isDeleting, isError: isDeleteError }] =
+    useDeletePostMutation();
+  const handleDelete = async (id) => {
+    await deletePost(id);
+  };
+
+  if (isPostsLoading) return <p>Loading...</p>;
+  if (postsError) return <p>Error: {postsError.message}</p>;
+  console.log(isPostsFetching);
+
   return (
     <>
       <WhatsNew />

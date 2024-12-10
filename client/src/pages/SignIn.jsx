@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import { AppleIcon, GoogleIcon } from "../data/Icon";
 import { useForm } from "react-hook-form"; // Import React Hook Form
 import { Link } from "react-router-dom";
-
+import { validatePassword } from "../utils/validatePassword";
 const SignIn = () => {
   const {
     register,
@@ -13,29 +13,6 @@ const SignIn = () => {
 
   const onSubmit = (data) => {
     console.log(data); // Ensure this logs when the form is submitted
-  };
-
-  // Custom Validation for Password
-  const validatePassword = (password) => {
-    if (password.length < 8) {
-      return "Password must be at least 8 characters long";
-    }
-    if (password.length > 16) {
-      return "Password cannot be longer than 16 characters";
-    }
-    if (!/[A-Z]/.test(password)) {
-      return "Password must contain at least one uppercase letter";
-    }
-    if (!/[a-z]/.test(password)) {
-      return "Password must contain at least one lowercase letter";
-    }
-    if (!/\d/.test(password)) {
-      return "Password must contain at least one number";
-    }
-    if (!/[@$!%*?&]/.test(password)) {
-      return "Password must contain at least one special character";
-    }
-    return true; // Valid password
   };
 
   return (
